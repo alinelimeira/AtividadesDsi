@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
-      home: Scarffold(
+      home: Scaffold(
         appBar: AppBar(
           title: const Text('Startup Name Generator'),
         ),
@@ -24,10 +24,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class _RandomWords extends State<RandomWords> {
+class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18);
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -52,6 +51,6 @@ class _RandomWords extends State<RandomWords> {
 
 class RandomWords extends StatefulWidget {
   const RandomWords({super.key});
-
-  State<RandomWords> creaState() => _RandomWords();
+  @override
+  State<RandomWords> createState() => _RandomWordsState();
 }
